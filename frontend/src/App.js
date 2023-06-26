@@ -7,6 +7,10 @@ class App {
   constructor($target) {
     this.$target = $target;
 
+    this.loading = new Loading({
+      $target,
+    });
+
     this.darkModeToggle = new DarkModeToggle({
       $target,
     });
@@ -14,7 +18,11 @@ class App {
     this.searchInput = new SearchInput({
       $target,
       onSearch: (keyword) => {
-        api.fetchCats(keyword).then(({ data }) => this.setState(data));
+        this.loading.show();
+        api.fetchCats(keyword).then(({ data }) => {
+          this.setState(data);
+          this.loading.hide();
+        });
       },
     });
 
