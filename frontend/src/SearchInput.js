@@ -27,6 +27,11 @@ class SearchInput {
     $randomButton.addEventListener("click", (e) => {
       onRandomSearch();
     });
+
+    this.KeywordHistory = new KeywordHistory({
+      $target,
+      onSearch,
+    });
   }
   render() {}
 }
