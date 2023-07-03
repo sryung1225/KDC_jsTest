@@ -5,6 +5,11 @@
   font-style: normal;
 }
 
+:root[color-mode="light"] {
+  --background: #fff;
+  --textColor: #000;
+}
+
 :root[color-mode="dark"] {
   --background: #000;
   --textColor: #fff;
@@ -102,6 +107,10 @@ body * {
 
 .ImageInfo .content-wrapper img {
   width: 100%;
+}
+
+.ImageInfo .close {
+  cursor: pointer;
 }
 
 .DarkModeToggle {

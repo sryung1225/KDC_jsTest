@@ -61,7 +61,7 @@ class ImageInfo {
       this.$imageInfo.addEventListener("click", (e) => {
         if (
           e.target.className === "ImageInfo" ||
-          e.$target.className === "close"
+          e.target.className === "close"
         ) {
           this.closeImageInfo();
         }
