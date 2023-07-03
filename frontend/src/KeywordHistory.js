@@ -8,9 +8,18 @@ class KeywordHistory {
     this.$keywordHistory = $keywordHistory;
     $target.appendChild($keywordHistory);
 
-    this.data = ["더미", "데이터", "아깽이", "cat"];
     this.onSearch = onSearch;
+    this.init();
+    this.render();
+  }
 
+  init() {
+    let dummy = ["더미", "데이터", "아깽이", "cat"];
+    this.setState(dummy);
+  }
+
+  setState(nextData) {
+    this.data = nextData;
     this.render();
   }
 
