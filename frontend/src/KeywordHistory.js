@@ -14,8 +14,22 @@ class KeywordHistory {
   }
 
   init() {
-    let dummy = ["더미", "데이터", "아깽이", "cat"];
-    this.setState(dummy);
+    const data = this.getHistory();
+    this.setState(data);
+  }
+
+  addKeyword(keyword) {
+    let keywordHistory = this.getHistory();
+    keywordHistory.unshift(keyword);
+    keywordHistory = keywordHistory.slice(0, 5);
+    localStorage.setItem("keywordHistory", keywordHistory.join(", "));
+    this.init(); // 데이터 업데이트
+  }
+
+  getHistory() {
+    return localStorage.getItem("keywordHistory") === null
+      ? []
+      : localStorage.getItem("keywordHistory").split(",");
   }
 
   setState(nextData) {

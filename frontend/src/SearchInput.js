@@ -11,9 +11,11 @@ class SearchInput {
     $wrapper.appendChild($searchInput);
     $target.appendChild($wrapper);
 
-    $searchInput.addEventListener("keyup", (e) => {
-      if (e.keyCode === 13) {
+    $searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
         onSearch(e.target.value);
+        // 최근 키워드 저장
+        this.KeywordHistory.addKeyword(e.target.value);
       }
     });
 
