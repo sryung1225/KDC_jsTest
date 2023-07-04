@@ -27,6 +27,10 @@ class App {
           this.saveResult(data);
         });
       },
+    });
+
+    this.randomButton = new RandomButton({
+      $target,
       onRandomSearch: () => {
         this.loading.show();
         api.fetchRandomCats().then(({ data }) => {
