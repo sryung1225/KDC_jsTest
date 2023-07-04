@@ -4,12 +4,12 @@ class ImageInfo {
 
   constructor({ $target, data }) {
     const $imageInfo = document.createElement("div");
-    $imageInfo.className = "ImageInfo";
     this.$imageInfo = $imageInfo;
+
+    $imageInfo.className = "ImageInfo";
     $target.appendChild($imageInfo);
 
     this.data = data;
-
     this.render();
   }
 

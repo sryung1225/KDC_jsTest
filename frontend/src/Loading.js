@@ -5,24 +5,24 @@ class Loading {
   constructor({ $target }) {
     const $loading = document.createElement("div");
     this.$loading = $loading;
+
     $target.appendChild(this.$loading);
 
     this.data = {
-      show: false
-    }
-
+      visible: false,
+    };
     this.render();
   }
 
   show() {
     this.setState({
-      show: true
+      visible: true,
     });
   }
 
   hide() {
     this.setState({
-      show: false
+      visible: false,
     });
   }
 
@@ -32,7 +32,7 @@ class Loading {
   }
 
   render() {
-    if (this.data.show) {
+    if (this.data.visible) {
       this.$loading.innerHTML = `
         <div class="Loading">
           <p>🧐로딩🧐</p>

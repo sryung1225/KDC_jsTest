@@ -4,8 +4,9 @@ class KeywordHistory {
 
   constructor({ $target, onSearch }) {
     const $keywordHistory = document.createElement("ul");
-    $keywordHistory.className = "KeywordHistory";
     this.$keywordHistory = $keywordHistory;
+
+    $keywordHistory.className = "KeywordHistory";
     $target.appendChild($keywordHistory);
 
     this.onSearch = onSearch;

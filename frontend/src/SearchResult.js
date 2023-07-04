@@ -6,15 +6,16 @@ class SearchResult {
 
   constructor({ $target, initialData, onClick, onNextPage }) {
     const $wrapper = document.createElement("section");
-    this.$searchResult = document.createElement("ul");
-    this.$searchResult.className = "SearchResult";
+    const $searchResult = document.createElement("ul");
+    this.$searchResult = $searchResult;
+
+    $searchResult.className = "SearchResult";
     $wrapper.appendChild(this.$searchResult);
     $target.appendChild($wrapper);
 
     this.data = initialData;
     this.onClick = onClick;
     this.onNextPage = onNextPage;
-
     this.render();
   }
 
@@ -51,7 +52,6 @@ class SearchResult {
       $item.addEventListener("click", () => {
         this.onClick(this.data[index]);
       });
-
       this.listObserver.observe($item);
     });
   }

@@ -23,7 +23,6 @@ class App {
         api.fetchCats(keyword).then(({ data }) => {
           this.setState(data);
           this.loading.hide();
-          // 로컬에 저장
           this.saveResult(data);
         });
       },
