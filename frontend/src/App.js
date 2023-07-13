@@ -21,7 +21,7 @@ class App {
       onSearch: (keyword) => {
         this.loading.show();
         api.fetchCats(keyword).then(({ data }) => {
-          this.setState(data);
+          this.setState(data ? data : []);
           this.loading.hide();
           this.saveResult(data);
         });
@@ -78,7 +78,7 @@ class App {
   }
 
   setState(nextData) {
-    console.log(this);
+    console.log(this.data);
     this.data = nextData;
     this.searchResult.setState(nextData);
   }
