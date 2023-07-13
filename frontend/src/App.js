@@ -1,5 +1,13 @@
 console.log("app is running!");
 
+import api from "./api.js";
+import Loading from "./Loading.js";
+import DarkModeToggle from "./DarkModeToggle.js";
+import SearchInput from "./SearchInput.js";
+import RandomButton from "./RandomButton.js";
+import SearchResult from "./SearchResult.js";
+import ImageInfo from "./ImageInfo.js";
+
 class App {
   $target = null;
   data = [];
@@ -95,3 +103,5 @@ class App {
     this.setState(lastResult);
   }
 }
+
+export default App;

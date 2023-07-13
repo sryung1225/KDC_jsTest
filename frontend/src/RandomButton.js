@@ -13,3 +13,5 @@ class RandomButton {
   }
   render() {}
 }
+
+export default RandomButton;
