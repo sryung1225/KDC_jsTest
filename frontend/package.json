@@ -23,10 +23,12 @@
     "url": "https://github.com/learn-programmers/fe-assignment-lab/issues"
   },
   "homepage": "https://github.com/learn-programmers/test-zone#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/helper-compilation-targets": "^7.22.9"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-env": "^7.22.9",
     "babel-jest": "^25.1.0",
     "http-server": "^0.12.0",
     "jest": "^24.9.0"
