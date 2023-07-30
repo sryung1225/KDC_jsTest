@@ -71,13 +71,33 @@ body * {
 
 .RandomButton {
   position: absolute;
-  top: 37px;
+  top: 0;
   right: 0;
   width: 75px;
   height: 75px;
   padding: 0;
   font-size: 40px;
   cursor: pointer;
+}
+
+.SearchInputSection {
+  position: relative;
+}
+
+.KeywordHistory {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.SearchInputSection:hover .KeywordHistory {
+  opacity: 1;
 }
 
 .ImageInfo {

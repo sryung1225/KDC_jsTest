@@ -4,7 +4,6 @@ import api from "./api.js";
 import Loading from "./Loading.js";
 import DarkModeToggle from "./DarkModeToggle.js";
 import SearchInput from "./SearchInput.js";
-import RandomButton from "./RandomButton.js";
 import SearchResult from "./SearchResult.js";
 import ImageInfo from "./ImageInfo.js";
 
@@ -40,10 +39,6 @@ class App {
           this.saveResult(data);
         });
       },
-    });
-
-    this.randomButton = new RandomButton({
-      $target,
       onRandomSearch: () => {
         this.loading.show();
         api.fetchRandomCats().then(({ data }) => {
