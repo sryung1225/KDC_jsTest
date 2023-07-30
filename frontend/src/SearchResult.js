@@ -27,7 +27,7 @@ class SearchResult {
   setState(nextData) {
     this.data = nextData;
     this.render();
-    this.Empty.show(nextData.length === 0);
+    this.Empty.show(nextData);
   }
 
   listObserver = new IntersectionObserver((items, observer) => {
@@ -44,7 +44,7 @@ class SearchResult {
   });
 
   render() {
-    if (this.data.length === 0) {
+    if (this.data === null || this.data.length === 0) {
       this.$searchResult.style.display = "none";
       return;
     }

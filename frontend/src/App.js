@@ -33,7 +33,7 @@ class App {
         this.loading.show();
         api.fetchCats(keyword).then(({ data }) => {
           this.setState({
-            items: data ? data : [],
+            items: data,
             page: this.DEFAULT_PAGE,
           });
           this.loading.hide();
@@ -48,7 +48,7 @@ class App {
         this.loading.show();
         api.fetchRandomCats().then(({ data }) => {
           this.setState({
-            items: data ? data : [],
+            items: data,
             page: this.DEFAULT_PAGE,
           });
           this.loading.hide();

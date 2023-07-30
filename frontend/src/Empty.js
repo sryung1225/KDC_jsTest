@@ -10,14 +10,16 @@ class Empty {
     $target.appendChild(this.$empty);
 
     this.data = {
-      visible: true,
+      visible: false,
+      isNull: false,
     };
     this.render();
   }
 
-  show(isEmpty) {
+  show(data) {
     this.setState({
-      visible: isEmpty,
+      visible: data === null || data.length === 0,
+      isNull: data === null,
     });
   }
 
@@ -29,9 +31,15 @@ class Empty {
   render() {
     if (this.data.visible) {
       this.$empty.style.display = "block";
-      this.$empty.innerHTML = `
-        <p>😥결과가 없습니다😥</p>
-      `;
+      if (this.data.isNull) {
+        this.$empty.innerHTML = `
+          <p>😖요청 실패😖</p>
+        `;
+      } else {
+        this.$empty.innerHTML = `
+          <p>😥결과가 없습니다😥</p>
+        `;
+      }
     } else {
       this.$empty.style.display = "none";
       this.$empty.innerHTML = ``;
