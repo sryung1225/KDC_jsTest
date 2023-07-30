@@ -141,6 +141,12 @@ body * {
   font-size: 40px;
 }
 
+.Empty {
+  padding: 100px 0;
+  font-size: 30px;
+  text-align: center;
+}
+
 /* MEDIA QUERY */
 @media screen and (max-width: 992px) {
   .SearchResult {
