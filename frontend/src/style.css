@@ -84,9 +84,20 @@ body * {
 }
 
 .SearchInput {
-  width: calc(100% - 90px);
+  width: calc(100% - 280px);
   font-size: 40px;
   padding: 10px 15px;
+}
+
+.LimitCount {
+  position: absolute;
+  top: 0;
+  right: 90px;
+  width: 175px;
+  height: 75px;
+  padding: 0;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .RandomButton {

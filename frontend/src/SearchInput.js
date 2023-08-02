@@ -17,10 +17,25 @@ class SearchInput {
 
     $searchInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
-        onSearch(e.target.value);
+        onSearch(e.target.value, this.$limitCount.value);
         this.KeywordHistory.addKeyword(e.target.value);
       }
     });
+
+    // 셀렉트 UI
+    const $limitCount = document.createElement("select");
+    this.$limitCount = $limitCount;
+    this.$limitCount.classList = "LimitCount";
+
+    const LimitCountOption = [10, 25, 50];
+    LimitCountOption.map((option) => {
+      let $option = document.createElement("option");
+      $option.value = option;
+      $option.textContent = `${option}개`;
+      $limitCount.appendChild($option);
+    });
+
+    $wrapper.appendChild($limitCount);
 
     this.RandomButton = new RandomButton({
       $target: $wrapper,
