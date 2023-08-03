@@ -6,6 +6,7 @@ import DarkModeToggle from "./DarkModeToggle.js";
 import SearchInput from "./SearchInput.js";
 import SearchResult from "./SearchResult.js";
 import ImageInfo from "./ImageInfo.js";
+import Banner from "./Banner.js";
 
 class App {
   $target = null;
@@ -49,6 +50,10 @@ class App {
           this.loading.hide();
         });
       },
+    });
+
+    this.banner = new Banner({
+      $target,
     });
 
     this.searchResult = new SearchResult({
