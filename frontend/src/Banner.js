@@ -11,7 +11,7 @@ class Banner {
     this.$banner = document.createElement("ul");
 
     this.$prevButton = document.createElement("button");
-    this.$prevButton.textContent = "PREV";
+    this.$prevButton.textContent = "◀";
     this.$prevButton.className = "prev";
 
     this.$prevButton.addEventListener("click", (e) => {
@@ -23,7 +23,7 @@ class Banner {
     });
 
     this.$nextButton = document.createElement("button");
-    this.$nextButton.textContent = "NEXT";
+    this.$nextButton.textContent = "▶";
     this.$nextButton.className = "next";
 
     this.$nextButton.addEventListener("click", (e) => {
