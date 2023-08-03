@@ -16,7 +16,7 @@ class Banner {
 
     this.$prevButton.addEventListener("click", (e) => {
       let prev = this.current - 1;
-      if (prev === 0) {
+      if (prev === -1) {
         return;
       }
       this.changeCurrent(prev);
@@ -73,6 +73,7 @@ class Banner {
       .join("");
     this.$banner.style.width =
       Number(this.$wrapper.clientWidth) * this.data.length + "px";
+    this.$banner.style.left = "0px";
     this.$banner.querySelectorAll("li").forEach((item) => {
       item.style.width = this.$wrapper.clientWidth + "px";
     });
